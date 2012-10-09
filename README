@@ -1,0 +1,9 @@
+Basic Setup
+===========
+
+These instructions are very bare-bones for now. Depending on input,
+requests, etc., it might get expanded.
+
+1. Copy `scripts/python_global_tags.py` to somewhere in your path
+2. Update your `~/.globalrc` to use it for python file. See
+`globalrc.example` for an example.

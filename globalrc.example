@@ -1,0 +1,9 @@
+default:\
+	:tc=python_global_tags:
+
+python_global_tags:\
+	:suffixes=s,a,sa,asm,C,H,cpp,cxx,hxx,hpp,cc,c,h,y,py,pyw:\
+        :skip=GPATH,GTAGS,GRTAGS,GSYMS,HTML/,HTML.pub/,html/,tags,TAGS,ID,y.tab.c,y.tab.h,.notfunction,cscope.out,.gdbinit,SCCS/,RCS/,CVS/,CVSROOT/,{arch}/,.svn/,.git/,.cvsrc,.cvsignore,.gitignore,.cvspass,.cvswrappers,.deps/,autom4te.cache/,.snprj/,.hg/,.hgignore,.hgtags,.bzr/:\
+ 	:GTAGS=python_global_tags.py %s: \
+	:GRTAGS=gtags-parser -dtr %s:\
+	:GSYMS=gtags-parser -dts %s:
