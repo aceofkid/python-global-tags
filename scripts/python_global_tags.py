@@ -62,7 +62,7 @@ def main():
         'filenames', metavar='F', type=str, nargs='*',
         help='a file to process')
     parser.add_argument(
-        '-s', '--symbol', action='store_true',
+        '-s', '--symbol', dest='symbol', action='store_true',
         help='Collect symbols other than object definitions and references. By default, locate object definitions.')
     args = parser.parse_args()
 
@@ -77,7 +77,7 @@ def main():
             else:
                 rval = subprocess.call(['gtags-parser', '-dt', filename])
         else:
-            vtype = args.symbol ? ReferenceVisitor : DefinitionVisitor
+            vtype = ReferenceVisitor if args.symbol else DefinitionVisitor
             rval = process_python_file(filename, vtype)
 
     sys.exit(rval)
